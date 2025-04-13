@@ -48,5 +48,3 @@ A data-driven analysis of photovoltaic (PV) system performance, focusing on brea
 
 ---
 
-## 🗂️ Project Structure
-
