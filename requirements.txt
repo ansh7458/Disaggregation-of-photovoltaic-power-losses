@@ -1,0 +1,14 @@
+# Data manipulation and analysis
+pandas==1.5.3         # For reading, cleaning, and processing CSV data
+
+# Numerical operations
+numpy==1.24.3         # For numerical computations and handling arrays
+
+# Plotting and visualization
+matplotlib==3.7.1     # For creating plots, charts, and visualizations
+
+# Optional: Jupyter environment
+notebook==6.5.0       # If you are running the project as a Jupyter notebook
+
+# Optional: Python virtual environment tools
+virtualenv==20.16.5   # To set up isolated environments (if needed)
