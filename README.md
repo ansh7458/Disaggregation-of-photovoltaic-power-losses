@@ -1,58 +1,52 @@
-# ☀️ Photovoltaic (PV) Cell Performance Analysis
+# ☀️ Disaggregation of Photovoltaic Power Losses
 
-This project analyzes the **monthly solar power output** using real irradiance data, simulates the behavior of a **photovoltaic (PV) system**, and estimates energy production under different assumptions. The analysis includes system loss estimation, energy generation calculations, and data visualization using Python.
+A data-driven analysis of photovoltaic (PV) system performance, focusing on breaking down power losses into distinct categories like wiring, soiling, aging, and module mismatch. This project uses real irradiance data and realistic system parameters to compute expected vs actual power output, and visualizes the loss breakdown in a clear and informative manner.
 
 ---
 
-## 📊 Project Highlights
+## 🚀 Project Highlights
 
-- 🔍 Monthly solar irradiance analysis
-- 🔧 Realistic PV system modeling (with efficiency & losses)
-- ⚡ Energy yield calculation (ideal vs expected)
-- 📈 Beautiful visualizations using Matplotlib
-- 🧠 Designed for academic use and research submissions
+- 📅 **Time-series solar irradiance analysis**
+- ⚙️ **Realistic PV system modeling**
+- 📉 **Residual loss calculation**
+- 🧮 **Disaggregation of losses** into key categories
+- 📊 **Clean visualizations** (bar charts & pie chart)
+- 🧠 Designed for academic submission & technical evaluation
 
 ---
 
 ## 🧪 Methodology
 
-The project performs the following steps:
+1. **📂 Data Processing**
+   - Import CSV data: `POWER_Point_Bangalore.csv`
+   - Clean and merge `YEAR`, `MO`, `DY` columns into a single date column
+   - Remove null or malformed entries
 
-1. **Data Import & Cleaning**
-   - Source: `POWER_Point_Bangalore.csv` (NASA/POWER or similar)
-   - Cleaned & formatted monthly solar irradiance values
+2. **⚡ System Modeling**
+   - **Panel specs:** 325W, 16.7% efficiency, 1.946 m² area
+   - **Panel count:** 16
+   - **Inverter efficiency:** 96%
+   - **Temperature loss:** 4%
+   - Compute **expected generation** using:
+     ```
+     Expected (kWh) = (Total Capacity × 5 hours / 1000) 
+                      × Inverter Efficiency × (1 - Temp Loss)
+     ```
 
-2. **System Parameters**
-   - Panel wattage: `325 W`
-   - Panel efficiency: `16.7%`
-   - Total panels: `16`
-   - Area per panel: `1.946 m²`
-   - Inverter efficiency: `96%`
-   - Temperature loss: `4%`
+3. **📏 Residual Loss Calculation**
+   - Subtract measured output from expected generation
+   - Clip negatives to 0
+   - Disaggregate total loss into:
+     - 🔌 **Wiring Loss** – 10%
+     - 🧼 **Soiling Loss** – 30%
+     - 🧩 **Module Mismatch Loss** – 25%
+     - 🧓 **Aging Loss** – 35%
 
-3. **Energy Estimation**
-   - Ideal Energy = Irradiance × Area × Efficiency
-   - Realistic Energy = Ideal Energy × (1 - Total Losses)
-
-4. **Visualization**
-   - Bar plots showing expected vs ideal energy
-   - Trends across months and years
+4. **📊 Visualization**
+   - Pie chart showing the **proportional breakdown** of losses
+   - Clear labeling for presentation
 
 ---
 
-## 📁 Project Structure
-
-```
-PV-Cell-Analysis/
-├── PV_CELLS.ipynb            # Main Jupyter Notebook with analysis and plots
-├── data/
-│   └── POWER_Point_Bangalore.csv  # Monthly irradiance data (source: NASA POWER)
-├── images/
-│   ├── irradiance_plot.png       # Monthly irradiance graph
-│   └── energy_comparison.png     # Expected vs ideal energy bar chart
-├── results/
-│   └── monthly_summary.csv       # Tabular results from calculations (optional)
-├── requirements.txt              # Python dependencies
-└── README.md                     # Project overview and instructions
-```
+## 🗂️ Project Structure
 
