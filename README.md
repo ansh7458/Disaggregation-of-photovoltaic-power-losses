@@ -15,6 +15,22 @@ A data-driven analysis of photovoltaic (PV) system performance, focusing on brea
 
 ---
 
+## ⚠️ Understanding Photovoltaic Losses
+
+In this project, we have analyzed the following key loss components:
+
+- 🔥 **Temperature Losses**: As the panel heats up, its efficiency drops. We assumed a 4% energy loss due to temperature effects.
+- 🔌 **Inverter Losses**: Conversion from DC to AC is not perfectly efficient. We considered a 96% inverter efficiency, implying a 4% loss.
+- ⚡ **Wiring Losses**: Some energy is lost due to resistance in the electrical wiring connecting the panels and inverter.
+- 🧽 **Soiling Losses**: Dirt, dust, and debris accumulating on panels reduce the effective irradiance reaching the cells.
+- ⚙️ **Mismatch Losses**: Variability in panel performance (due to shading or manufacturing differences) leads to overall efficiency reduction.
+- 🧓 **Aging Losses**: Over time, panels naturally degrade and generate slightly less power each year.
+
+These losses are quantified to estimate the realistic power output from the ideal energy estimate. By breaking them down, we gain insights into where improvements can be made to enhance PV system performance.
+
+---
+
+
 ## 🧪 Methodology
 
 1. **📂 Data Processing**
@@ -43,8 +59,12 @@ A data-driven analysis of photovoltaic (PV) system performance, focusing on brea
      - 🧓 **Aging Loss** – 35%
 
 4. **📊 Visualization**
-   - Pie chart showing the **proportional breakdown** of losses
-   - Clear labeling for presentation
+ Visualization
+
+-📊 Bar plots showing expected vs ideal energy output
+-🌞 Monthly irradiance graphs to understand solar availability trends
+-🔻 Loss distribution pie chart representing relative losses from different sources
+-📉 Line graphs to compare trends in actual vs. theoretical power generation
 
 ---
 
