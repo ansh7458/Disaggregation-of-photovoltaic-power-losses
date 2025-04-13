@@ -18,9 +18,6 @@ A data-driven analysis of photovoltaic (PV) system performance, focusing on brea
 ## ⚠️ Understanding Photovoltaic Losses
 
 In this project, we have analyzed the following key loss components:
-
-- 🔥 **Temperature Losses**: As the panel heats up, its efficiency drops. We assumed a 4% energy loss due to temperature effects.
-- 🔌 **Inverter Losses**: Conversion from DC to AC is not perfectly efficient. We considered a 96% inverter efficiency, implying a 4% loss.
 - ⚡ **Wiring Losses**: Some energy is lost due to resistance in the electrical wiring connecting the panels and inverter.
 - 🧽 **Soiling Losses**: Dirt, dust, and debris accumulating on panels reduce the effective irradiance reaching the cells.
 - ⚙️ **Mismatch Losses**: Variability in panel performance (due to shading or manufacturing differences) leads to overall efficiency reduction.
